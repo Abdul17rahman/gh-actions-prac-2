@@ -32,7 +32,11 @@ jobs:
         uses: docker/setup-docker-action@v4
 
       - name: Runs the docker compose
-        run: docker-compose up -d
+        run: docker compose up -d
 
       - name: Success
         run: echo "Deployed successfully..."
+
+      - name: Stop the docker compose
+        if: always()
+        run: docker compose down
