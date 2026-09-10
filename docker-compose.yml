@@ -5,6 +5,7 @@ services:
     image: "redis"
 
   vite-app:
+    restart: always
     build: .
     ports:
       - "3000:5173"

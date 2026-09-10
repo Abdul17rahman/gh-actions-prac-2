@@ -28,6 +28,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [lints, tests]
     steps:
+      - name: Get code
+        uses: actions/checkout@v3
+
       - name: Get docker CE
         uses: docker/setup-docker-action@v4
 
