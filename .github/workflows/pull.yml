@@ -1,0 +1,14 @@
+name: Pull Request Checks
+
+on:
+  pull_request: # Runs when a pull request has been iniated
+    types: # Specifies the types of pull request the workflow runs on
+      - opened
+      - closed
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Just a simple test
+        run: echo "Test is succesfull"

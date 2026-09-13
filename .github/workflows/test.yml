@@ -1,6 +1,6 @@
 name: Tests, Lints and Deploy
 
-on: push
+on: push # Runs only on push event for any branche
 
 jobs:
   lints:

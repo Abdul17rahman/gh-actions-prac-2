@@ -1,0 +1,21 @@
+name: Push Checks
+
+on:
+  push: # Runs on a push event
+    branches: # Filters the specific branches it should run on
+      - dev
+      - main
+      - "dev-*" # Anything with dev- and anything after it
+      - "fea/**" # Anything with fea/ and anything after it including subdirectories
+    paths-ignore: # Ignores workflow if the changes are done in these paths
+      - workflows/** # Anything with workflows/ and anything after it including subdirectories
+      - "docs/**" # Anything with docs/ and anything after it including subdirectories
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print something
+        run: echo "Workflow executed...."
+
+# [skip ci] or [skip actions] in commit message will skip the workflow execution.
